@@ -2,7 +2,7 @@ package org.example.aritmeticos;
 
 public class Main {
     public static void main(String[] args) {
-        // Declaração de Variáveis
+        // Declaração de Variáveis.
 
         int a = 10;
         int b = 2;
