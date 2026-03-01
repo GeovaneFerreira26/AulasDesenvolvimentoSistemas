@@ -19,10 +19,8 @@ public class Main {
 
         // ENCAPSULAMENTO.
            // ESTANCIAR CLASSE.
-        Cliente cliente1 = new Cliente("Geovane", 28);
-        Cliente cliente2 = new Cliente("Larissa", 29);
+        Cliente cliente1 = new Cliente("Geovane", 28, 1239875625, "rua Beralda 97", 79966554);
         
-
         Pet pet1 = new Pet("Lupita", 9, "Pischer", "Pequeno", false);
         
 
@@ -30,10 +28,10 @@ public class Main {
         Livro livro2 = new Livro("COMO SER UBER CONFORT", "GEGEKA DA CROSSER",321456 , 59, 9.99);
         
 
-        Funcionario func1 = new Funcionario();
-        func1.setNome("Geovane Ferreira");
-        func1.setCargo("Supervisor");
-        func1.setSalario(3489.78);
+        // Funcionario func1 = new Funcionario();
+        // func1.setNome("Geovane Ferreira");
+        // func1.setCargo("Supervisor");
+        // func1.setSalario(3489.78);
 
         Aluno aluno1 = new Aluno("Geovane", "geo265@hotmail.com");
         
@@ -42,7 +40,7 @@ public class Main {
         veiculo[1] = new Veiculo("SkK-9L70", "AZUL", 7, 88, 190, 17.3);
 
         System.out.println("---- DADOS VEÍCULOS ----");
-        System.out.println("");
+        System.out.println(veiculo[0].getPlaca());
 
         // System.out.println("-----------------");
         // System.out.println("Nome: " + pet1.getNome());
