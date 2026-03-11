@@ -1,12 +1,12 @@
-package org.example.exemplo1;
+package org.example.atividade2;
 
 public abstract class Pessoa {
     protected String nome;
-    protected int idade;
+    protected String telefone;
 
-    public Pessoa(String nome, int idade) {
+    public Pessoa(String nome, String telefone) {
         this.nome = nome;
-        this.idade = idade;
+        this.telefone = telefone;
     }
 
     public String getNome() {
@@ -17,19 +17,19 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getIdade() {
-        return idade;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     @Override
     public String toString() {
         return "Pessoa{" +
                 "nome='" + nome + '\'' +
-                ", idade=" + idade +
+                ", telefone='" + telefone + '\'' +
                 '}';
     }
 }
