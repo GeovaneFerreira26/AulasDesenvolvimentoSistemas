@@ -7,9 +7,9 @@ public class Main {
         Multiplicacao mult = new Multiplicacao();
         Divisao div = new Divisao();
 
-        System.out.println("Soma: " + soma.calcular(25,6));
+        System.out.println("Soma: " + soma.calcular(25,56));
         System.out.println("Subtração: " + sub.calcular(25,6));
-        System.out.println("Multiplicação: " + mult.calcular(25,6));
+        System.out.println("Multiplicação: " + mult.calcular(45,6));
         System.out.println("Divisão: " + div.calcular(25,5));
     }
 }
