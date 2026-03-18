@@ -18,6 +18,11 @@ public class Motoboy extends Funcionario {
     }
 
     @Override
+    public double salarioFinal() {
+        return super.salarioBase;
+    }
+
+    @Override
     public String toString() {
         return "Motoboy{" +
                 "carteiraHabilitacao='" + carteiraHabilitacao + '\'' +

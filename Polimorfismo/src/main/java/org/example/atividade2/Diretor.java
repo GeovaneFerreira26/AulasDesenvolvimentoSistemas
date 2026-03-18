@@ -4,45 +4,38 @@ import java.io.Serializable;
 
 public class Diretor extends Funcionario implements Contratacao {
 
-    private double premio = 0.2;
+    private static final double PREMIO = 0.2;
 
-    public Diretor(String nome, String dataNascimento, Sexo sexo, Setor setor, double salarioBase, double premio) {
+    public Diretor(String nome, String dataNascimento, org.example.atividade2.Sexo sexo, org.example.atividade2.Setor setor, double salarioBase) {
         super(nome, dataNascimento, sexo, setor, salarioBase);
-        this.premio = premio;
     }
 
-    public double getPremio() {
-        return premio;
-    }
-
-    public void setPremio(double premio) {
-        this.premio = premio;
+    public double getPREMIO() {
+        return PREMIO;
     }
 
     @Override
-    public void admitir(Funcionario funcionario) {
+    public void demitir(org.example.atividade2.Funcionario funcionario) {
 
     }
 
     @Override
-    public void demitir(Funcionario funcionario) {
+    public void admitir(org.example.atividade2.Funcionario funcionario) {
 
     }
 
     @Override
     public double salarioFinal() {
-        return 0;
+        double salarioFinal = super.salarioBase;
+        salarioFinal += super.salarioBase * this.PREMIO;
+        return salarioFinal;
     }
 
     @Override
     public String toString() {
-        return "Diretor{" +
-                "premio=" + premio +
-                ", nome='" + nome + '\'' +
-                ", dataNascimento='" + dataNascimento + '\'' +
-                ", sexo=" + sexo +
-                ", setor=" + setor +
-                ", salarioBase=" + salarioBase +
+        return super.toString() +
+                "\nDiretor{" +
+                "PREMIO=" + PREMIO +
                 '}';
     }
 }
