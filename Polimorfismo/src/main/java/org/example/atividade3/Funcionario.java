@@ -1,24 +1,29 @@
 package org.example.atividade3;
 
-public abstract class Funcionario implements SalarioFinal{
-    protected String Nome;
+public abstract class Funcionario implements SalarioFinal {
+    protected String nome;
     protected String cpf;
     protected String dataNascimento;
     protected double salarioBase;
 
     public Funcionario(String nome, String cpf, String dataNascimento, double salarioBase) {
-        Nome = nome;
+        this.nome = nome;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.salarioBase = salarioBase;
     }
 
+    @Override
+    public double obterSalarioFinal() {
+        return 0;
+    }
+
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String nome) {
-        Nome = nome;
+        this.nome = nome;
     }
 
     public String getCpf() {
@@ -48,7 +53,7 @@ public abstract class Funcionario implements SalarioFinal{
     @Override
     public String toString() {
         return "Funcionario{" +
-                "Nome='" + Nome + '\'' +
+                "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", dataNascimento='" + dataNascimento + '\'' +
                 ", salarioBase=" + salarioBase +

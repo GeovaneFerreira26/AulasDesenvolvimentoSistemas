@@ -1,6 +1,6 @@
 package org.example.atividade4;
 
-public class CargoDeConfianca extends Funcionario {
+public abstract class CargoDeConfianca extends Funcionario {
 
     protected Bonificacao bonificacao;
 

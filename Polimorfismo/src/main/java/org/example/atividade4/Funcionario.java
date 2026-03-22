@@ -1,6 +1,6 @@
 package org.example.atividade4;
 
-public class Funcionario implements SalarioFinal{
+public abstract class Funcionario implements SalarioFinal{
     protected String nome;
     protected String cpf;
     protected String rg;

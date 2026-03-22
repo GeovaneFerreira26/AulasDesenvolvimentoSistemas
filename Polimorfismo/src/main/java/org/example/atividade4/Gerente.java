@@ -2,9 +2,13 @@ package org.example.atividade4;
 
 public class Gerente extends CargoDeConfianca{
 
+    public Gerente(String nome, String cpf, String rg, Sexo sexo, double salarioBase, String dataNascimento, String dataAdmissao, Bonificacao bonificacao) {
+        super(nome, cpf, rg, sexo, salarioBase, dataNascimento, dataAdmissao, bonificacao);
+    }
+
     @Override
     public String toString() {
-        return "Gerente{" +
+        return "Gerente {" +
                 "bonificacao=" + bonificacao +
                 ", nome='" + nome + '\'' +
                 ", cpf=" + cpf +
@@ -13,12 +17,12 @@ public class Gerente extends CargoDeConfianca{
                 ", salarioBase=" + salarioBase +
                 ", dataNascimento='" + dataNascimento + '\'' +
                 ", dataAdmissao='" + dataAdmissao + '\'' +
+                ", salarioFinal ='" + this.getSalarioFinal() + '\'' +
                 '}';
     }
 
-    public Gerente(String nome, String cpf, String rg, Sexo sexo, double salarioBase, String dataNascimento, String dataAdmissao, Bonificacao bonificacao) {
-        super(nome, cpf, rg, sexo, salarioBase, dataNascimento, dataAdmissao, bonificacao);
-
-
+    @Override
+    public double getSalarioFinal() {
+        return super.salarioBase * Bonificacao.GERENTE.getValor();
     }
 }

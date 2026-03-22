@@ -4,9 +4,10 @@ public enum Bonificacao {
     GERENTE (1.3),
     DIRETOR (1.4);
 
-    private double valor;
 
-    Bonificacao(double valor) {
+    private final double valor;
+
+    Bonificacao (double valor) {
         this.valor = valor;
     }
 

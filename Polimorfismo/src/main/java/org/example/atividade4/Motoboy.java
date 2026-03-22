@@ -19,7 +19,7 @@ public class Motoboy extends Funcionario {
 
     @Override
     public String toString() {
-        return "Motoboy{" +
+        return "Motoboy {" +
                 "placaDaMoto='" + placaDaMoto + '\'' +
                 ", nome='" + nome + '\'' +
                 ", cpf=" + cpf +
@@ -28,6 +28,12 @@ public class Motoboy extends Funcionario {
                 ", salarioBase=" + salarioBase +
                 ", dataNascimento='" + dataNascimento + '\'' +
                 ", dataAdmissao='" + dataAdmissao + '\'' +
+                ", salarioFinal='" + this.getSalarioFinal() + '\'' +
                 '}';
+    }
+
+    @Override
+    public double getSalarioFinal() {
+        return super.salarioBase;
     }
 }
