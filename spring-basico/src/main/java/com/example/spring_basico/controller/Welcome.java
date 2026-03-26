@@ -3,6 +3,9 @@ package com.example.spring_basico.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+//@RestCOntroller
+// CONTROLA A CLASSE PARA CRIAR ENDPOINTS
+
 @RestController
 public class Welcome {
 

@@ -5,6 +5,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+
+//@Entity
+// Controla a classe para criar um modelo para tabela no banco de dados.
+
 @Entity
 public class UsuarioModel {
 
@@ -15,6 +19,9 @@ public class UsuarioModel {
 
     private String nome;
     private String email;
+
+    public UsuarioModel() {
+    }
 
     public UsuarioModel(Long id, String nome, String email) {
         this.id = id;
