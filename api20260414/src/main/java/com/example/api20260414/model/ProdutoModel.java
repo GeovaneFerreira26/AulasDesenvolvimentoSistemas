@@ -1,0 +1,58 @@
+package com.example.api20260414.model;
+
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "tab_produtos")
+public class ProdutoModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private Long id;
+    private String nome;
+    private String quantidade;
+    private double preco;
+
+    public ProdutoModel() {
+    }
+
+    public ProdutoModel(Long id, String nome, String quantidade, double preco) {
+        this.id = id;
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preco = preco;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+}
