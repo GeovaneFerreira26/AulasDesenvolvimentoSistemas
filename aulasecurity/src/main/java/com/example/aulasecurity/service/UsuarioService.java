@@ -5,12 +5,16 @@ import com.example.aulasecurity.dto.UsuarioResponseDTO;
 import com.example.aulasecurity.model.UsuarioModel;
 import com.example.aulasecurity.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UsuarioService {
+
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
     private UsuarioRepository repository;
@@ -30,18 +34,10 @@ public class UsuarioService {
         }
         UsuarioModel novoUsuario = new UsuarioModel();
         novoUsuario.setNome(usuarioDTO.getNome());
-        novoUsuario.setEmail(novoUsuario.getEmail());
-        novoUsuario.setSenha(novoUsuario.getSenha());
+        novoUsuario.setEmail(usuarioDTO.getEmail());
+        novoUsuario.setSenha(passwordEncoder.encode(usuarioDTO.getSenha()));
 
         return repository.save(novoUsuario);
-
-    }
-    public UsuarioModel updateUser(Long id, UsuarioModel usuario){
-        if(!repository.existsById(id)){
-            throw new IllegalArgumentException("Usuário não encontrado ❌");
-        }
-        usuario.setId(id);
-        return repository.save(usuario);
 
     }
 

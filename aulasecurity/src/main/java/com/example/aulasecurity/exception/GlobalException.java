@@ -9,14 +9,14 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GlobalException {
-    @ExceptionHandler(RuntimeException)
-    public ResponseEntity<Map<String, Object>> RuntimeException(RuntimeException erro){
-        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("Mensagem", erro.getMessage()));
-
-    }
-
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, Object>>illegalArgumentException(IllegalArgumentException erro){
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("Mensagem", erro.getMessage()));
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<Map<String, Object>> RuntimeException(RuntimeException erro){
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(Map.of("Mensagem", erro.getMessage()));
+
     }
 }
