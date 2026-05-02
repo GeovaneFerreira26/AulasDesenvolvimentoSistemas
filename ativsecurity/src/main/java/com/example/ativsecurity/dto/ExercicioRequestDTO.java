@@ -14,7 +14,7 @@ public class ExercicioRequestDTO {
     private String grupoMuscular;
 
     @NotBlank(message = "Nome Obrigatório ❌")
-    @Size(max = 2, message = "2 dígitos no máximo ❌")
+    @Size(max = 10, message = "2 dígitos no máximo ❌")
     private String repeticoes;
 
     @NotBlank(message = "Nome Obrigatório ❌")

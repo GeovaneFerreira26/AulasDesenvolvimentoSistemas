@@ -30,4 +30,16 @@ public class ExercicioController {
         service.saveExer(ExercicioDTO);
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("Mensagem", "Exercicio cadastrado com sucesso. ✅"));
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Map<String, Object>> atualizar(@PathVariable Long id, @RequestBody @Valid ExercicioRequestDTO ExercicioDTO){
+        service.atualizarExer(id, ExercicioDTO);
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("Mensagem", "Exercicio atualizado com sucesso"));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<String, Object>> deletar(@PathVariable Long id){
+        service.deleteExer(id);
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("Mensagem", "Exercicio deletado com sucesso"));
+    }
 }

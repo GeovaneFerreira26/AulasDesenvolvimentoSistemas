@@ -40,7 +40,7 @@ public class AlunoService {
 
     public AlunoModel atualizarAluno(Long id, AlunoRequestDTO alunoDTO){
         if(!repository.existsById(id)){
-            throw new IllegalArgumentException(("Aluno não encontrado ❌"));
+            throw new IllegalArgumentException("Aluno não encontrado ❌");
         }
         AlunoModel newAluno = repository.findById(id).get();
         newAluno.setNome(alunoDTO.getNome());

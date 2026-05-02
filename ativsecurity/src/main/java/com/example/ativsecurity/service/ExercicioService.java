@@ -35,4 +35,24 @@ public class ExercicioService {
 
         return repository.save(newExercicio);
     }
+
+    public ExercicioModel atualizarExer(Long id, ExercicioRequestDTO execicioDTO) {
+        if(!repository.existsById(id)) {
+            throw new IllegalArgumentException("Exercicio não encontrado ❌");
+        }
+        ExercicioModel newExercicio = repository.findById(id).get();
+        newExercicio.setNome(execicioDTO.getNome());
+        newExercicio.setGrupoMuscular(execicioDTO.getGrupoMuscular());
+        newExercicio.setRepeticoes(execicioDTO.getRepeticoes());
+        newExercicio.setSeries(execicioDTO.getSeries());
+
+        return repository.save(newExercicio);
+    }
+
+    public void deleteExer(Long id) {
+        if(!repository.existsById(id)) {
+            throw new RuntimeException("Exercicio não encotrado ❌");
+        }
+        repository.deleteById(id);
+    }
 }

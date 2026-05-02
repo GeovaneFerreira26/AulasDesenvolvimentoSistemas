@@ -2,10 +2,13 @@ package com.example.ativsecurity.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalException {
@@ -17,5 +20,13 @@ public class GlobalException {
     @ExceptionHandler(IllegalAccessException.class)
     public ResponseEntity<Map<String, Object>> IllegalAccessException(IllegalAccessException erro) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("Mensagem", erro.getMessage()));
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    public ResponseEntity<Map<String, Object>> MethodArgumentNotValidException(MethodArgumentNotValidException erro) {
+
+        String mensagem = erro.getBindingResult().getFieldErrors().stream().map(FieldError::getDefaultMessage).collect(Collectors.joining(", "));
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("Mensagem", mensagem));
     }
 }
