@@ -41,6 +41,6 @@ public class AlunoController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> deletarAluno(@PathVariable Long id){
         service.deletarAluno(id);
-        return ResponseEntity.status(HttpStatus.OK).body(Map.of("Mensagem", "Aluno Cadastrado com sucesso ✅"));
+        return ResponseEntity.status(HttpStatus.OK).body(Map.of("Mensagem", "Cadastro deletado com sucesso ✅"));
     }
 }
