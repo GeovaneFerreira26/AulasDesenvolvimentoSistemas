@@ -1,0 +1,10 @@
+.mensagem h1{
+    font-size: 50px;
+    color: rgb(0, 255, 98);
+    margin: 20px auto;
+}
+
+.mensagem p{
+    color:rgb(238, 255, 0);
+    text-align: center;
+}
