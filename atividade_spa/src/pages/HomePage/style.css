@@ -1,0 +1,81 @@
+/* O container pai que alinha tudo de lado */
+.container-colunas {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço igualmente entre elas */
+    gap: 20px;                      /* Cria um espaçamento (borda/respiro) entre as colunas */
+    padding: 12px;                  /* Espaço interno para não colar nas bordas da tela */
+    max-width: 1200px;              /* Limita a largura máxima para não esticar demais em telas gigantes */
+    margin: 0 auto;                 /* Centraliza o bloco inteiro na tela */
+}
+
+/* O estilo individual de cada uma das 3 colunas */
+.jogos-a-fazer {
+    flex: 1;                        /* Faz com que as 3 colunas tenham exatamente o mesmo tamanho */
+    background-color: #1a1a1a;      /* Um fundo escuro seguindo a estética do seu site */
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 8px;             /* Deixa as bordinhas arredondadas */
+    border: 3px solid #b47474;         /* Uma borda sutil para dar destaque */
+    transition: all 0.3s ease-in-out; /* Faz a mágica da transição suave acontecer em 0.3 segundos */
+}
+.jogos-a-fazer:hover {
+    cursor: pointer; /* Transforma a seta do mouse naquela mãozinha de clique */
+    
+    border-color: #ff0000; /* Muda a cor da borda para o vermelho do Vitória */
+    
+    /* Cria aquele efeito de brilho/neon vermelho ao redor do card */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); 
+    
+    /* Faz o card subir 5 pixels (eixo Y negativo), dando o efeito de flutuar */
+    transform: translateY(-5px); 
+}
+.jogos-realizados {
+    flex: 1;                        /* Faz com que as 3 colunas tenham exatamente o mesmo tamanho */
+    background-color: #1a1a1a;      /* Um fundo escuro seguindo a estética do seu site */
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 8px;             /* Deixa as bordinhas arredondadas */
+    border: 3px solid #b47474;         /* Uma borda sutil para dar destaque */
+    transition: all 0.3s ease-in-out; /* Faz a mágica da transição suave acontecer em 0.3 segundos */
+}
+
+.jogos-realizados:hover {
+    cursor: pointer; /* Transforma a seta do mouse naquela mãozinha de clique */
+    
+    border-color: #ff0000; /* Muda a cor da borda para o vermelho do Vitória */
+    
+    /* Cria aquele efeito de brilho/neon vermelho ao redor do card */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); 
+    
+    /* Faz o card subir 5 pixels (eixo Y negativo), dando o efeito de flutuar */
+    transform: translateY(-5px); 
+}
+.fundacao {
+    flex: 1;                        /* Faz com que as 3 colunas tenham exatamente o mesmo tamanho */
+    background-color: #1a1a1a;      /* Um fundo escuro seguindo a estética do seu site */
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 8px;             /* Deixa as bordinhas arredondadas */
+    border: 3px solid #b47474;         /* Uma borda sutil para dar destaque */
+    transition: all 0.3s ease-in-out; /* Faz a mágica da transição suave acontecer em 0.3 segundos */
+}
+.fundacao:hover {
+    cursor: pointer; /* Transforma a seta do mouse naquela mãozinha de clique */
+    
+    border-color: #ff0000; /* Muda a cor da borda para o vermelho do Vitória */
+    
+    /* Cria aquele efeito de brilho/neon vermelho ao redor do card */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); 
+    
+    /* Faz o card subir 5 pixels (eixo Y negativo), dando o efeito de flutuar */
+    transform: translateY(-5px); 
+}
+
+
+/* Super importante: Responsividade! 
+   Se a tela for menor que 768px (celulares), as colunas empilham uma embaixo da outra */
+@media (max-width: 768px) {
+    .container-colunas {
+        flex-direction: column;
+    }
+}
