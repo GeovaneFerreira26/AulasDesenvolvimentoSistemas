@@ -1,0 +1,86 @@
+header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-logo {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.header-logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: filter 0.3s ease;
+}
+
+.header-logo:hover h1 {
+  filter: drop-shadow(0 0 8px rgba(0, 242, 254, 0.6));
+}
+
+header nav {
+  display: flex;
+  gap: 30px;
+}
+
+/* Estilizando o link/navlink limpo do React Router */
+header nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 4px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Efeito de linha rápida acelerando por baixo do link no Hover */
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+header nav a:hover {
+  color: #ffffff;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Se for a rota ativa, mantém o destaque fixo */
+header nav a.active {
+  color: #00f2fe;
+  font-weight: 600;
+}
+
+header nav a.active::after {
+  width: 100%;
+  background: #00f2fe;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+}

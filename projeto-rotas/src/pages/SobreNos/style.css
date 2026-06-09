@@ -1,0 +1,77 @@
+.page-sobre-nos {
+  flex: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  animation: pageEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page-sobre-nos h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.page-sobre-nos > p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 1000px;
+  text-align: justify;
+}
+
+/* Transformando a lista padrão em um grid moderno de cards */
+.page-sobre-nos ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  list-style: none;
+}
+
+.page-sobre-nos li {
+  background: #161c24;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 25px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  position: relative;
+  text-align: justify;
+  transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+/* Efeito Hover interativo nos itens da lista (Agilidade e Foco) */
+.page-sobre-nos li:hover {
+  transform: translateY(-5px);
+  background: #1c2430;
+  border-color: rgba(0, 242, 254, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Indicador lateral neon dentro de cada card no hover */
+.page-sobre-nos li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #00f2fe;
+  border-radius: 12px 0 0 12px;
+  transition: height 0.3s ease;
+}
+
+.page-sobre-nos li:hover::before {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .page-sobre-nos h1 {
+    font-size: 2.2rem;
+  }
+}

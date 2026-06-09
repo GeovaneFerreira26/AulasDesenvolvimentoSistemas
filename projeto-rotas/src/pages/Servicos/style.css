@@ -1,0 +1,76 @@
+.Servicos {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  animation: pageEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Grid de duas colunas para os combos de serviços */
+.Servicos ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  list-style: none;
+}
+
+.Servicos li {
+  background: linear-gradient(145deg, #161c24 0%, #0f1319 100%);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+  padding: 25px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  display: flex;
+  justify-content: space-between; /* Alinha o texto na esquerda e o preço na direita */
+  align-items: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efeito de Hover dinâmico puxando para o Azul Elétrico */
+.Servicos li:hover {
+  transform: translateX(4px); /* Deslocamento sutil para o lado transmite dinamismo */
+  background: #1c2430;
+  border-color: rgba(79, 172, 254, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Pequeno detalhe brilhante na lateral esquerda do card de serviços ao passar o mouse */
+.Servicos li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(to bottom, #00f2fe, #4facfe);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Servicos li:hover::before {
+  opacity: 1;
+}
+
+/* Destaque estilizado para os Preços (R$) */
+.Servicos li::after {
+  font-weight: 700;
+  color: #00f2fe; /* Preço ganha a cor de destaque tecnológico */
+  font-size: 1.15rem;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .Servicos {
+    padding: 40px 20px;
+  }
+  .Servicos li {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
