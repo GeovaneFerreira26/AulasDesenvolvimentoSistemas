@@ -1,0 +1,37 @@
+.footer {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+
+  border-top: 1px solid #334155;
+
+  padding: 20px;
+  margin-top: auto;
+
+  text-align: center;
+}
+
+.footer p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.footer p strong {
+  color: #f8fafc;
+}
+
+.footer:hover {
+  border-top-color: #3b82f6;
+  transition: border-color 0.3s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .footer {
+    padding: 16px;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+}

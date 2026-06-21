@@ -1,0 +1,132 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cadastro-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #0f172a;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #111827 50%,
+    #1e293b 100%
+  );
+
+  padding: 20px;
+}
+
+.cadastro-page form {
+  width: 100%;
+  max-width: 420px;
+
+  background-color: #1e293b;
+  border: 1px solid #334155;
+
+  padding: 32px;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.cadastro-page form::before {
+  content: "Criar Conta";
+  display: block;
+
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+
+  color: #f8fafc;
+  margin-bottom: 24px;
+}
+
+.grupo-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.grupo-form label {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.grupo-form input {
+  width: 100%;
+
+  padding: 14px;
+  border-radius: 10px;
+
+  border: 1px solid #475569;
+  background-color: #0f172a;
+
+  color: #f8fafc;
+  font-size: 1rem;
+
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.grupo-form input::placeholder {
+  color: #64748b;
+}
+
+.grupo-form input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+button {
+  width: 100%;
+
+  padding: 14px;
+  margin-top: 8px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #3b82f6
+  );
+
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 480px) {
+  .cadastro-page form {
+    padding: 24px;
+  }
+
+  .cadastro-page form::before {
+    font-size: 1.5rem;
+  }
+}
